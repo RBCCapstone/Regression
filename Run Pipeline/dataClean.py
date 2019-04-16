@@ -51,7 +51,7 @@ def DataClean(articleDf):
         article[:] = [sentence for sentence in article if len(sentence.split())>5]
         # remove photo credits
         article[:] = [sentence for sentence in article if not('Photo' in sentence)]
-        blackList = ['get breaking news','click here','write to','subscribe','read more','read or share'
+        blackList = ['get breaking news','click here','write to','subscribe','read more','read or share', 'graphic:'
                      ,'reporting by','twitter, instagram','comment','copyright','©', 'fox', 'you', 'sign up', 'your inbox']
         # remove lines with terms that are associated with useless sentences
         article[:] = [sentence for sentence in article if not any(term in sentence.lower() for term in blackList)]
